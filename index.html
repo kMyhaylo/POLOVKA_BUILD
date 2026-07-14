@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POLOVKA BUILD — Ремонт квартир та комерційних приміщень під ключ в Ужгороді</title>
+<meta name="description" content="Ремонт квартир, магазинів, офісів, салонів краси, кафе та медичних кабінетів в Ужгороді. 6+ років досвіду, гарантія 1 рік, особистий менеджер проєкту. Об'єкти від 30 м².">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="POLOVKA BUILD — Ремонт квартир та комерційних приміщень під ключ в Ужгороді">
+<meta property="og:description" content="6+ років досвіду в ремонтах під ключ. Квартири, магазини, офіси, салони краси, кафе, медичні кабінети, склади. Гарантія 1 рік на роботи.">
+<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:locale" content="uk_UA">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="POLOVKA BUILD — Ремонт квартир та комерційних приміщень під ключ">
+<meta name="twitter:description" content="Ремонт квартир і комерційних приміщень в Ужгороді. 6+ років досвіду, гарантія 1 рік, фото- та відеозвіти.">
+<meta name="twitter:image" content="assets/og-image.jpg">
+
+<!-- Icons -->
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1115'/%3E%3Csvg x='9' y='9' width='46' height='46' viewBox='20 50 400 390'%3E%3Cg stroke='%23f59f1f' stroke-width='26' fill='none' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M40 420V190L140 110L240 190V420'/%3E%3Cpath d='M75 420V225L140 172L205 225V420'/%3E%3Cpath d='M110 420V300L140 275L170 300V420'/%3E%3Cpath d='M210 420V70H255V420'/%3E%3Cpath d='M255 420V190L355 110L400 148'/%3E%3Cpath d='M285 420V225L355 172L385 197'/%3E%3Cpath d='M320 420V300L355 275L370 288'/%3E%3C/g%3E%3C/svg%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b0d10">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+  /* index_2: галерея по квартирах (великі картки) + 7 карток напрямків */
+  .grid--industries { display: flex; flex-wrap: wrap; justify-content: center; }
+  .grid--industries .industry-card { flex: 1 1 140px; max-width: 200px; }
+
+  .room-grid.room-grid--apartments,
+  .video-grid.video-grid--tours { grid-template-columns: 1fr; gap: 20px; }
+  @media (min-width: 760px) {
+    .room-grid.room-grid--apartments,
+    .video-grid.video-grid--tours { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    /* компактні картки: квадрат замість 3:4, щоб не займали весь екран */
+    .room-grid--apartments .room-card,
+    .video-grid--tours .room-card { aspect-ratio: 1 / 1; }
+    .room-grid--apartments .room-card__title,
+    .video-grid--tours .room-card__title { font-size: 17px; }
+  }
+</style>
+
+<!-- LocalBusiness structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "POLOVKA BUILD",
+  "image": "assets/og-image.jpg",
+  "description": "Ремонт квартир та комерційних приміщень під ключ в Ужгороді: квартири, магазини, офіси, салони краси, кафе, медичні кабінети, склади.",
+  "telephone": "+380958245232",
+  "areaServed": {
+    "@type": "City",
+    "name": "Ужгород"
+  },
+  "priceRange": "$$"
+}
+</script>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#top" class="logo" aria-label="POLOVKA BUILD — на головну">
+      <img src="assets/logo-full.png" alt="POLOVKA BUILD" class="logo__img">
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#why" class="nav__link">Чому ми</a>
+      <a href="#services" class="nav__link">Послуги</a>
+      <a href="#gallery" class="nav__link">Наші роботи</a>
+      <a href="#industries" class="nav__link">Об'єкти</a>
+      <a href="#contact" class="nav__link">Контакти</a>
+    </nav>
+
+    <a href="tel:+380958245232" class="btn btn--primary btn--sm header__cta">
+      <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1l-2.2 2.1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span>+380 95 824 52 32</span>
+    </a>
+
+    <button class="burger" id="burger" aria-label="Відкрити меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#why" class="mobile-nav__link">Чому ми</a>
+    <a href="#services" class="mobile-nav__link">Послуги</a>
+    <a href="#gallery" class="mobile-nav__link">Наші роботи</a>
+    <a href="#industries" class="mobile-nav__link">Об'єкти</a>
+    <a href="#contact" class="mobile-nav__link">Контакти</a>
+    <a href="tel:+380958245232" class="btn btn--primary mobile-nav__cta">Зателефонувати</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__glow hero__glow--1"></div>
+      <div class="hero__glow hero__glow--2"></div>
+      <div class="hero__grid"></div>
+    </div>
+
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="eyebrow" data-anim="fade-up">
+          <span class="eyebrow__dot"></span>
+          Ремонт під ключ в Ужгороді
+        </span>
+
+        <h1 class="hero__title" data-anim="fade-up">
+          Ремонт квартир та комерційних приміщень <span class="text-accent">під ключ</span> в Ужгороді
+        </h1>
+
+        <p class="hero__subtitle" data-anim="fade-up">
+          Понад 6 років перетворюємо квартири та комерційні простори на функціональні й естетичні об'єкти.
+          Один менеджер, прозорий контроль якості та чіткі дедлайни — від демонтажу до фінального оздоблення.
+        </p>
+
+        <div class="hero__cta" data-anim="fade-up">
+          <a href="https://t.me/+380958245232" target="_blank" rel="noopener" class="btn btn--outline">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M21.5 4.5 3 11.7c-1 .4-1 1.6.1 1.9l4.4 1.4 1.7 5.3c.3.9 1.4 1.1 2 .4l2.5-2.7 4.6 3.4c.8.6 1.9.1 2.1-.8l3-15.4c.2-1-.8-1.8-1.9-1.7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.6 15 18 7.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <span>Telegram</span>
+          </a>
+          <a href="viber://chat?number=%2B380958245232" class="btn btn--outline">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              <g transform="matrix(0.55 0 0 0.55 5.4 5.4)" stroke-width="2.9">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </g>
+            </svg>
+            <span>Viber</span>
+          </a>
+          <a href="tel:+380958245232" class="btn btn--primary">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1l-2.2 2.1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <span>+380 95 824 52 32</span>
+          </a>
+        </div>
+
+        <div class="hero__badges" data-anim="fade-up">
+          <div class="badge"><svg class="icon icon--sm" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6.5v5.3c0 5 3.4 8.9 8 10.2 4.6-1.3 8-5.2 8-10.2V6.5L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>6+ років досвіду</div>
+            <div class="badge"><svg class="icon icon--sm" viewBox="0 0 24 24" fill="none"><path d="m5 12.5 4.5 4.5L19.5 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Гарантія 1 рік</div>
+            <div class="badge"><svg class="icon icon--sm" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H4z" stroke="currentColor" stroke-width="1.6"/><path d="M9 21h6M12 16v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Фото/відео звіти</div>
+        </div>
+      </div>
+
+      <div class="hero__visual" data-anim="fade-in">
+        <svg class="building-svg" viewBox="0 0 420 460" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g stroke="#F59F1F" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+            <path class="draw-path" d="M40 420V190L140 110L240 190V420" />
+            <path class="draw-path" d="M75 420V225L140 172L205 225V420" />
+            <path class="draw-path" d="M110 420V300L140 275L170 300V420" />
+            <path class="draw-path" d="M210 420V70H255V420" />
+            <path class="draw-path" d="M255 420V190L355 110L400 148" />
+            <path class="draw-path" d="M285 420V225L355 172L385 197" />
+            <path class="draw-path" d="M320 420V300L355 275L370 288" />
+          </g>
+          <g stroke="rgba(245,159,31,0.35)" stroke-width="1.5">
+            <line x1="0" y1="420" x2="420" y2="420"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <a href="#why" class="scroll-hint" aria-label="Гортати далі">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 4v14m0 0-6-6m6 6 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <!-- ================= WHY US ================= -->
+  <section class="section" id="why">
+    <div class="container">
+      <div class="section__head" data-anim="fade-up">
+        <span class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span>Чому обирають нас</span>
+        <h2 class="section__title">Ремонт без хаосу, дзвінків у нікуди<br>та зірваних термінів</h2>
+        <p class="section__subtitle">Ми будуємо процес так, щоб ви могли займатися своїми справами, а не контролювати будівельників щодня.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card" data-anim="fade-up">
+          <div class="card__icon"><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6.5v5.3c0 5 3.4 8.9 8 10.2 4.6-1.3 8-5.2 8-10.2V6.5L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m9.2 12.3 2 2 3.6-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 class="card__title">6+ років досвіду</h3>
+          <p class="card__text">Виконуємо ремонти квартир та комерційних приміщень різної складності — від окремих кімнат до великих торгових залів.</p>
+        </div>
+
+        <div class="card" data-anim="fade-up">
+          <div class="card__icon"><svg class="icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3 class="card__title">Один менеджер проєкту</h3>
+          <p class="card__text">Ви спілкуєтесь з однією людиною від першого дня до здачі об'єкта — жодної плутанини між бригадами.</p>
+        </div>
+
+        <div class="card" data-anim="fade-up">
+          <div class="card__icon"><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 class="card__title">Контроль якості на кожному етапі</h3>
+          <p class="card__text">Перевіряємо результат після кожного етапу робіт, а не лише в кінці — це виключає приховані дефекти.</p>
+        </div>
+
+        <div class="card" data-anim="fade-up">
+          <div class="card__icon"><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M3 9.5h18M6.5 9.5V6a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3.5M5 9.5h14l-1.2 9.4a2 2 0 0 1-2 1.6H8.2a2 2 0 0 1-2-1.6L5 9.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <h3 class="card__title">Допомога з закупівлею матеріалів</h3>
+          <p class="card__text">Підбираємо постачальників та допомагаємо з логістикою матеріалів, щоб зекономити ваш час і бюджет.</p>
+        </div>
+
+        <div class="card" data-anim="fade-up">
+          <div class="card__icon"><svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="11" r="2.8" stroke="currentColor" stroke-width="1.6"/><path d="M8 21h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3 class="card__title">Фото- та відеозвіти</h3>
+          <p class="card__text">Регулярно надсилаємо звіти з об'єкта, тож ви бачите реальний прогрес, навіть перебуваючи за кордоном.</p>
+        </div>
+
+        <div class="card" data-anim="fade-up">
+          <div class="card__icon"><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 3.5 5 6v6c0 4.3 3 8 7 8.9 4-.9 7-4.6 7-8.9V6l-7-2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.3 12 11.3 14 15 9.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 class="card__title">Гарантія 1 рік на роботи</h3>
+          <p class="card__text">Надаємо гарантію 1 рік на виконані роботи та оперативно усуваємо зауваження.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section class="section section--dark" id="services">
+    <div class="container">
+      <div class="section__head" data-anim="fade-up">
+        <span class="eyebrow"><span class="eyebrow__dot"></span>Послуги</span>
+        <h2 class="section__title">Повний цикл ремонтних робіт</h2>
+        <p class="section__subtitle">Від демонтажу до фінального оздоблення — все в межах одного підряду, без залучення сторонніх бригад.</p>
+      </div>
+
+      <div class="services-list" data-anim="fade-up">
+        <div class="service-item">
+          <span class="service-item__num">01</span>
+          <span class="service-item__name">Демонтажні роботи</span>
+        </div>
+        <div class="service-item">
+          <span class="service-item__num">02</span>
+          <span class="service-item__name">Гіпсокартонні конструкції</span>
+        </div>
+        <div class="service-item">
+          <span class="service-item__num">03</span>
+          <span class="service-item__name">Електромонтажні роботи</span>
+        </div>
+        <div class="service-item">
+          <span class="service-item__num">04</span>
+          <span class="service-item__name">Сантехнічні роботи</span>
+        </div>
+        <div class="service-item">
+          <span class="service-item__num">05</span>
+          <span class="service-item__name">Штукатурні роботи</span>
+        </div>
+        <div class="service-item">
+          <span class="service-item__num">06</span>
+          <span class="service-item__name">Плиткові роботи</span>
+        </div>
+        <div class="service-item">
+          <span class="service-item__num">07</span>
+          <span class="service-item__name">Підлогові покриття</span>
+        </div>
+        <div class="service-item">
+          <span class="service-item__num">08</span>
+          <span class="service-item__name">Малярні роботи</span>
+        </div>
+        <div class="service-item">
+          <span class="service-item__num">09</span>
+          <span class="service-item__name">Монтаж освітлення</span>
+        </div>
+        <div class="service-item">
+          <span class="service-item__num">10</span>
+          <span class="service-item__name">Оздоблювальні роботи під ключ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INDUSTRIES ================= -->
+  <section class="section" id="industries">
+    <div class="container">
+      <div class="section__head" data-anim="fade-up">
+        <span class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span>Об'єкти</span>
+        <h2 class="section__title">З якими приміщеннями ми працюємо</h2>
+      </div>
+
+      <div class="grid grid--industries">
+        <div class="industry-card" data-anim="fade-up">
+          <svg class="icon icon--lg" viewBox="0 0 24 24" fill="none"><path d="M3 10.5 12 3l9 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 9v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V9" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.5 21v-6.5h5V21" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <h3>Квартири</h3>
+        </div>
+        <div class="industry-card" data-anim="fade-up">
+          <svg class="icon icon--lg" viewBox="0 0 24 24" fill="none"><path d="M4 9.5 5 4h14l1 5.5M4 9.5v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-9M4 9.5c0 1.5 1.2 2.5 2.5 2.5S9 11 9 9.5m0 0c0 1.5 1.2 2.5 2.5 2.5S14 11 14 9.5m0 0c0 1.5 1.2 2.5 2.5 2.5S19 11 19 9.5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <h3>Магазини</h3>
+        </div>
+        <div class="industry-card" data-anim="fade-up">
+          <svg class="icon icon--lg" viewBox="0 0 24 24" fill="none"><rect x="4" y="3.5" width="16" height="17" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M8 8h2M14 8h2M8 12h2M14 12h2M8 16h2M14 16h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <h3>Офіси</h3>
+        </div>
+        <div class="industry-card" data-anim="fade-up">
+          <svg class="icon icon--lg" viewBox="0 0 24 24" fill="none"><path d="M7 21c0-4 2-6 5-6s5 2 5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.5"/></svg>
+          <h3>Салони краси</h3>
+        </div>
+        <div class="industry-card" data-anim="fade-up">
+          <svg class="icon icon--lg" viewBox="0 0 24 24" fill="none"><path d="M5 9V5h14v4M5 9c0 5 1.5 9 7 11 5.5-2 7-6 7-11M5 9h14" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <h3>Кафе та ресторани</h3>
+        </div>
+        <div class="industry-card" data-anim="fade-up">
+          <svg class="icon icon--lg" viewBox="0 0 24 24" fill="none"><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/></svg>
+          <h3>Медичні кабінети</h3>
+        </div>
+        <div class="industry-card" data-anim="fade-up">
+          <svg class="icon icon--lg" viewBox="0 0 24 24" fill="none"><path d="M3 10 12 4l9 6v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <h3>Склади</h3>
+        </div>
+      </div>
+
+      <!-- CRITICAL BUSINESS FILTER -->
+      <div class="disclaimer" data-anim="fade-up">
+        <svg class="disclaimer__icon" viewBox="0 0 24 24" fill="none"><path d="M12 3 2 20h20L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 10v4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="17.3" r="1" fill="currentColor"/></svg>
+        <div>
+          <p class="disclaimer__title">Важливо перед зверненням</p>
+          <p class="disclaimer__text">Ми працюємо з об'єктами <strong>від 30 м²</strong> (по підлозі). Менші площі не беремо в роботу.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY (PHOTO / VIDEO) ================= -->
+  <section class="section section--dark" id="gallery">
+    <div class="container">
+      <div class="section__head" data-anim="fade-up">
+        <span class="eyebrow"><span class="eyebrow__dot"></span>Наші роботи</span>
+        <h2 class="section__title">Фото та відео з об'єктів</h2>
+        <p class="section__subtitle">Кожна картка — окрема квартира. Гортайте фото всередині картки, натискайте на фото для повноекранного перегляду.</p>
+      </div>
+
+      <h3 class="gallery-subhead" data-anim="fade-up">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="10" r="1.5" stroke="currentColor" stroke-width="1.4"/><path d="m5 17 4.5-4.5a2 2 0 0 1 2.8 0L15 15.2l1.2-1.2a2 2 0 0 1 2.8 0L20.5 15.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Фото з об'єктів
+      </h3>
+      <div class="room-grid room-grid--apartments" data-anim="fade-up">
+
+        <article class="room-card" data-room="0">
+          <div class="room-card__scroller" id="apt-scroller-0">
+            <button class="room-card__slide" type="button" data-index="0">
+              <img src="assets/gallery/photos/project-01-01.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 1: кухня">
+            </button>
+            <button class="room-card__slide" type="button" data-index="1">
+              <img src="assets/gallery/photos/project-01-02.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 1: кухня-їдальня">
+            </button>
+            <button class="room-card__slide" type="button" data-index="2">
+              <img src="assets/gallery/photos/project-01-03.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 1: коридор">
+            </button>
+            <button class="room-card__slide" type="button" data-index="3">
+              <img src="assets/gallery/photos/project-01-10.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 1: коридор, інший ракурс">
+            </button>
+            <button class="room-card__slide" type="button" data-index="4">
+              <img src="assets/gallery/photos/project-01-05.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 1: спальня">
+            </button>
+            <button class="room-card__slide" type="button" data-index="5">
+              <img src="assets/gallery/photos/project-01-06.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 1: спальня, зона вікна">
+            </button>
+            <button class="room-card__slide" type="button" data-index="6">
+              <img src="assets/gallery/photos/project-01-13.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 1: спальня з робочою зоною">
+            </button>
+            <button class="room-card__slide" type="button" data-index="7">
+              <img src="assets/gallery/photos/project-01-14.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 1: робоча зона, інший ракурс">
+            </button>
+            <button class="room-card__slide" type="button" data-index="8">
+              <img src="assets/gallery/photos/project-01-11.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 1: спальня з виходом на балкон">
+            </button>
+            <button class="room-card__slide" type="button" data-index="9">
+              <img src="assets/gallery/photos/project-01-12.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 1: спальня, штори та текстиль">
+            </button>
+            <button class="room-card__slide" type="button" data-index="10">
+              <img src="assets/gallery/photos/project-01-07.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 1: ванна кімната">
+            </button>
+            <button class="room-card__slide" type="button" data-index="11">
+              <img src="assets/gallery/photos/project-01-08.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 1: ванна кімната, душова">
+            </button>
+            <button class="room-card__slide" type="button" data-index="12">
+              <img src="assets/gallery/photos/project-01-09.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 1: ванна кімната, деталі">
+            </button>
+            <button class="room-card__slide" type="button" data-index="13">
+              <img src="assets/gallery/photos/project-01-04.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 1: гардеробна з пральною зоною">
+            </button>
+          </div>
+          <div class="room-card__scrim">
+            <div class="room-card__title-row">
+              <h3 class="room-card__title">Квартира 1</h3>
+              <span class="room-card__count">14 фото</span>
+            </div>
+            <div class="room-card__dots"></div>
+          </div>
+          <button class="room-card__arrow room-card__arrow--prev" type="button" aria-label="Попереднє фото">
+            <svg viewBox="0 0 24 24" fill="none"><path d="m14.5 6-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="room-card__arrow room-card__arrow--next" type="button" aria-label="Наступне фото">
+            <svg viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </article>
+
+        <article class="room-card" data-room="1">
+          <div class="room-card__scroller" id="apt-scroller-1">
+            <button class="room-card__slide" type="button" data-index="0">
+              <img src="assets/gallery/photos/project-01-30.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: передпокій">
+            </button>
+            <button class="room-card__slide" type="button" data-index="1">
+              <img src="assets/gallery/photos/project-01-31.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: передпокій, вхідна зона">
+            </button>
+            <button class="room-card__slide" type="button" data-index="2">
+              <img src="assets/gallery/photos/project-01-28.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: передпокій, дзеркало та вішаки">
+            </button>
+            <button class="room-card__slide" type="button" data-index="3">
+              <img src="assets/gallery/photos/project-01-29.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: дзеркало, деталь інтер'єру">
+            </button>
+            <button class="room-card__slide" type="button" data-index="4">
+              <img src="assets/gallery/photos/project-01-20.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: кухня">
+            </button>
+            <button class="room-card__slide" type="button" data-index="5">
+              <img src="assets/gallery/photos/project-01-21.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: кухня, інший ракурс">
+            </button>
+            <button class="room-card__slide" type="button" data-index="6">
+              <img src="assets/gallery/photos/project-01-22.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: кухня-вітальня">
+            </button>
+            <button class="room-card__slide" type="button" data-index="7">
+              <img src="assets/gallery/photos/project-01-23.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: кухня-вітальня, ширший план">
+            </button>
+            <button class="room-card__slide" type="button" data-index="8">
+              <img src="assets/gallery/photos/project-01-26.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: кухонна зона та диван">
+            </button>
+            <button class="room-card__slide" type="button" data-index="9">
+              <img src="assets/gallery/photos/project-01-24.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: вітальня">
+            </button>
+            <button class="room-card__slide" type="button" data-index="10">
+              <img src="assets/gallery/photos/project-01-25.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: вітальня, інший ракурс">
+            </button>
+            <button class="room-card__slide" type="button" data-index="11">
+              <img src="assets/gallery/photos/project-01-19.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: вітальня, ТВ-зона">
+            </button>
+            <button class="room-card__slide" type="button" data-index="12">
+              <img src="assets/gallery/photos/project-01-18.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: вітальня, вихід у передпокій">
+            </button>
+            <button class="room-card__slide" type="button" data-index="13">
+              <img src="assets/gallery/photos/project-01-27.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: прихована дверна група">
+            </button>
+            <button class="room-card__slide" type="button" data-index="14">
+              <img src="assets/gallery/photos/project-01-16.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: спальня">
+            </button>
+            <button class="room-card__slide" type="button" data-index="15">
+              <img src="assets/gallery/photos/project-01-17.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: спальня, зона вікна">
+            </button>
+            <button class="room-card__slide" type="button" data-index="16">
+              <img src="assets/gallery/photos/project-01-15.jpg" loading="lazy" alt="POLOVKA BUILD — Квартира 2: гардеробна">
+            </button>
+          </div>
+          <div class="room-card__scrim">
+            <div class="room-card__title-row">
+              <h3 class="room-card__title">Квартира 2</h3>
+              <span class="room-card__count">17 фото</span>
+            </div>
+            <div class="room-card__dots"></div>
+          </div>
+          <button class="room-card__arrow room-card__arrow--prev" type="button" aria-label="Попереднє фото">
+            <svg viewBox="0 0 24 24" fill="none"><path d="m14.5 6-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="room-card__arrow room-card__arrow--next" type="button" aria-label="Наступне фото">
+            <svg viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </article>
+      </div>
+
+      <h3 class="gallery-subhead gallery-subhead--video" data-anim="fade-up">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h7A2.5 2.5 0 0 1 16 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 4 16.5v-9Z" stroke="currentColor" stroke-width="1.6"/><path d="m16 10 4.2-2.4c.5-.3 1.1.1 1.1.7v7.4c0 .6-.6 1-1.1.7L16 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Відео з об'єктів
+      </h3>
+      <div class="video-grid video-grid--tours" data-anim="fade-up">
+
+        <article class="room-card room-card--video">
+          <div class="room-card__video-wrap">
+            <video
+              class="room-card__video"
+              src="assets/gallery/video/project-01.mp4"
+              poster="assets/gallery/video/project-01-poster.jpg"
+              muted
+              loop
+              playsinline
+              preload="none"
+              aria-label="POLOVKA BUILD — відеоогляд квартири, об'єкт 1"
+            ></video>
+            <button class="room-card__expand" type="button" aria-label="Розгорнути відео на весь екран">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <span class="room-card__mute-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 9.5v5h4l5 4v-13l-5 4H4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m16.5 9.5 4 5m0-5-4 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              без звуку
+            </span>
+          </div>
+          <div class="room-card__scrim room-card__scrim--static">
+            <div class="room-card__title-row">
+              <h3 class="room-card__title">Відеоогляд · Об'єкт 1</h3>
+              <span class="room-card__count">1:14</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="room-card room-card--video">
+          <div class="room-card__video-wrap">
+            <video
+              class="room-card__video"
+              src="assets/gallery/video/project-02-tour.mp4"
+              poster="assets/gallery/video/project-02-kitchen-poster.jpg"
+              muted
+              loop
+              playsinline
+              preload="none"
+              aria-label="POLOVKA BUILD — повний відеоогляд квартири, об'єкт 2"
+            ></video>
+            <button class="room-card__expand" type="button" aria-label="Розгорнути відео на весь екран">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <span class="room-card__mute-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 9.5v5h4l5 4v-13l-5 4H4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m16.5 9.5 4 5m0-5-4 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              без звуку
+            </span>
+          </div>
+          <div class="room-card__scrim room-card__scrim--static">
+            <div class="room-card__title-row">
+              <h3 class="room-card__title">Відеоогляд · Об'єкт 2</h3>
+              <span class="room-card__count">1:48</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT / FINAL CTA ================= -->
+ <section class="section section--cta" id="contact">
+  <div class="cta__glow" aria-hidden="true"></div>
+  <div class="container cta__inner">
+    <span class="eyebrow" data-anim="fade-up"><span class="eyebrow__dot"></span>Контакти</span>
+    <h2 class="cta__title" data-anim="fade-up">Готові обговорити ваш об'єкт?</h2>
+    <p class="cta__subtitle" data-anim="fade-up">Напишіть або зателефонуйте — розкажемо про терміни, етапи та орієнтовну вартість ремонту саме для вашого приміщення.</p>
+
+    <div class="cta__buttons" data-anim="fade-up">
+      <a href="https://t.me/+380958245232" target="_blank" rel="noopener" class="btn btn--outline btn--lg">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M21.5 4.5 3 11.7c-1 .4-1 1.6.1 1.9l4.4 1.4 1.7 5.3c.3.9 1.4 1.1 2 .4l2.5-2.7 4.6 3.4c.8.6 1.9.1 2.1-.8l3-15.4c.2-1-.8-1.8-1.9-1.7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span>Написати в Telegram</span>
+      </a>
+
+      <a href="viber://chat?number=%2B380958245232" class="btn btn--outline btn--lg">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+          <g transform="matrix(0.55 0 0 0.55 5.4 5.4)" stroke-width="2.9">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </g>
+        </svg>
+        <span>Написати у Viber</span>
+      </a>
+
+      <a href="tel:+380958245232" class="btn btn--primary btn--lg">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1l-2.2 2.1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span>+380 95 824 52 32</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="assets/logo-full.png" alt="POLOVKA BUILD" class="footer__logo">
+      <p class="footer__tagline">Ремонт квартир та комерційних приміщень під ключ в Ужгороді.</p>
+    </div>
+
+    <nav class="footer__nav">
+      <a href="#why">Чому ми</a>
+      <a href="#services">Послуги</a>
+      <a href="#gallery">Наші роботи</a>
+      <a href="#industries">Об'єкти</a>
+      <a href="#contact">Контакти</a>
+    </nav>
+
+    <div class="footer__contacts">
+      <a href="tel:+380958245232">+380 95 824 52 32</a>
+      <a href="https://t.me/+380958245232" target="_blank" rel="noopener">Telegram</a>
+      <a href="viber://chat?number=%2B380958245232">Viber</a>
+      <span class="footer__city">Ужгород</span>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>&copy; <span id="year"></span> POLOVKA BUILD. Усі права захищено.</p>
+  </div>
+</footer>
+
+<!-- ================= STICKY CONTACT DOCK ================= -->
+<div class="dock" id="dock">
+  <a href="https://t.me/+380958245232" target="_blank" rel="noopener" class="dock__btn dock__btn--telegram" aria-label="Написати в Telegram">
+    <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M21.5 4.5 3 11.7c-1 .4-1 1.6.1 1.9l4.4 1.4 1.7 5.3c.3.9 1.4 1.1 2 .4l2.5-2.7 4.6 3.4c.8.6 1.9.1 2.1-.8l3-15.4c.2-1-.8-1.8-1.9-1.7Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+  </a>
+  <a href="viber://chat?number=%2B380958245232" class="dock__btn dock__btn--viber" aria-label="Написати у Viber">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+      <g transform="matrix(0.55 0 0 0.55 5.4 5.4)" stroke-width="2.9">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </g>
+    </svg>
+  </a>
+  <a href="tel:+380958245232" class="dock__btn dock__btn--call" aria-label="Зателефонувати">
+    <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1l-2.2 2.1Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+  </a>
+</div>
+
+<!-- ================= PHOTO LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Закрити">
+    <svg viewBox="0 0 24 24" fill="none"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+  <button class="lightbox__nav lightbox__prev" id="lightboxPrev" aria-label="Попереднє фото">
+    <svg viewBox="0 0 24 24" fill="none"><path d="m14.5 6-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <button class="lightbox__nav lightbox__next" id="lightboxNext" aria-label="Наступне фото">
+    <svg viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="lightbox__stage">
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    <p class="lightbox__counter" id="lightboxCounter"></p>
+  </div>
+</div>
+
+<!-- ================= VIDEO MODAL ================= -->
+<div class="video-modal" id="videoModal" aria-hidden="true">
+  <button class="lightbox__close" id="videoModalClose" aria-label="Закрити">
+    <svg viewBox="0 0 24 24" fill="none"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+  <div class="video-modal__stage">
+    <video id="videoModalPlayer" controls playsinline></video>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
