@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>POLOVKA BUILD — Ремонт квартир та комерційних приміщень під ключ в Ужгороді</title>
-<meta name="description" content="Ремонт квартир, магазинів, офісів, салонів краси, кафе та медичних кабінетів в Ужгороді. 6+ років досвіду, гарантія 1 рік, особистий менеджер проєкту. Об'єкти від 30 м².">
+<meta name="description" content="Ремонт квартир, магазинів, офісів, салонів краси, кафе, медичних кабінетів та фасадів в Ужгороді. 6+ років досвіду, гарантія 1 рік, особистий менеджер проєкту. Об'єкти від 30 м².">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="POLOVKA BUILD — Ремонт квартир та комерційних приміщень під ключ в Ужгороді">
-<meta property="og:description" content="6+ років досвіду в ремонтах під ключ. Квартири, магазини, офіси, салони краси, кафе, медичні кабінети, склади. Гарантія 1 рік на роботи.">
+<meta property="og:description" content="6+ років досвіду в ремонтах під ключ. Квартири, магазини, офіси, салони краси, кафе, медичні кабінети, склади, фасади. Гарантія 1 рік на роботи.">
 <meta property="og:image" content="assets/og-image.jpg">
 <meta property="og:locale" content="uk_UA">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="POLOVKA BUILD — Ремонт квартир та комерційних приміщень під ключ">
-<meta name="twitter:description" content="Ремонт квартир і комерційних приміщень в Ужгороді. 6+ років досвіду, гарантія 1 рік, фото- та відеозвіти.">
+<meta name="twitter:description" content="Ремонт квартир, комерційних приміщень та фасадів в Ужгороді. 6+ років досвіду, гарантія 1 рік, фото- та відеозвіти.">
 <meta name="twitter:image" content="assets/og-image.jpg">
 
 <!-- Icons -->
@@ -36,16 +36,21 @@
 <link rel="stylesheet" href="css/style.css">
 
 <style>
-  /* index_2: галерея по квартирах (великі картки) + 7 карток напрямків */
+  /* index_2: галерея по квартирах (великі картки) + картки напрямків */
   .grid--industries { display: flex; flex-wrap: wrap; justify-content: center; }
   .grid--industries .industry-card { flex: 1 1 140px; max-width: 200px; }
 
   .room-grid.room-grid--apartments,
   .video-grid.video-grid--tours { grid-template-columns: 1fr; gap: 20px; }
+
   @media (min-width: 760px) {
-    .room-grid.room-grid--apartments,
+    /* 3 картки з фото в одну лінію */
+    .room-grid.room-grid--apartments { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    
+    /* 2 картки з відео в одну лінію */
     .video-grid.video-grid--tours { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    /* компактні картки: квадрат замість 3:4, щоб не займали весь екран */
+
+    /* компактні картки: квадрат замість 3:4 */
     .room-grid--apartments .room-card,
     .video-grid--tours .room-card { aspect-ratio: 1 / 1; }
     .room-grid--apartments .room-card__title,
@@ -60,7 +65,7 @@
   "@type": "GeneralContractor",
   "name": "POLOVKA BUILD",
   "image": "assets/og-image.jpg",
-  "description": "Ремонт квартир та комерційних приміщень під ключ в Ужгороді: квартири, магазини, офіси, салони краси, кафе, медичні кабінети, склади.",
+  "description": "Ремонт квартир та комерційних приміщень під ключ в Ужгороді: квартири, магазини, офіси, салони краси, кафе, медичні кабінети, склади, фасади.",
   "telephone": "+380958245232",
   "areaServed": {
     "@type": "City",
@@ -130,7 +135,7 @@
 
         <p class="hero__subtitle" data-anim="fade-up">
           Понад 6 років перетворюємо квартири та комерційні простори на функціональні й естетичні об'єкти.
-          Один менеджер, прозорий контроль якості та чіткі дедлайни — від демонтажу до фінального оздоблення.
+          Один менеджер, прозорий контроль якості та чіткі дедлайни — від демонтажу до фінального оздоблення. Також виконуємо фасадні роботи.
         </p>
 
         <div class="hero__cta" data-anim="fade-up">
@@ -282,6 +287,15 @@
           <span class="service-item__num">10</span>
           <span class="service-item__name">Оздоблювальні роботи під ключ</span>
         </div>
+        <div class="service-item">
+          <span class="service-item__num">11</span>
+          <span class="service-item__name">Фасадні роботи</span>
+        </div>
+        <!-- 12-й пункт для рівноцінності списку -->
+        <div class="service-item">
+          <span class="service-item__num">12</span>
+          <span class="service-item__name">Прибирання після ремонту</span>
+        </div>
       </div>
     </div>
   </section>
@@ -323,6 +337,10 @@
           <svg class="icon icon--lg" viewBox="0 0 24 24" fill="none"><path d="M3 10 12 4l9 6v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
           <h3>Склади</h3>
         </div>
+        <div class="industry-card" data-anim="fade-up">
+          <svg class="icon icon--lg" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 11v4M15 11v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Фасади</h3>
+        </div>
       </div>
 
       <!-- CRITICAL BUSINESS FILTER -->
@@ -349,8 +367,11 @@
         <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="10" r="1.5" stroke="currentColor" stroke-width="1.4"/><path d="m5 17 4.5-4.5a2 2 0 0 1 2.8 0L15 15.2l1.2-1.2a2 2 0 0 1 2.8 0L20.5 15.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Фото з об'єктів
       </h3>
+
+      <!-- 3 КАРТКИ З ФОТО -->
       <div class="room-grid room-grid--apartments" data-anim="fade-up">
 
+        <!-- КАРТКА 1 -->
         <article class="room-card" data-room="0">
           <div class="room-card__scroller" id="apt-scroller-0">
             <button class="room-card__slide" type="button" data-index="0">
@@ -411,6 +432,7 @@
           </button>
         </article>
 
+        <!-- КАРТКА 2 -->
         <article class="room-card" data-room="1">
           <div class="room-card__scroller" id="apt-scroller-1">
             <button class="room-card__slide" type="button" data-index="0">
@@ -479,12 +501,46 @@
             <svg viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </article>
+
+        <!-- КАРТКА 3 -->
+        <article class="room-card" data-room="2">
+          <div class="room-card__scroller" id="apt-scroller-2">
+            <button class="room-card__slide" type="button" data-index="0">
+              <img src="assets/photos/fasade_01.jpg" loading="lazy" alt="POLOVKA BUILD — Будинок: фото 1">
+            </button>
+            <button class="room-card__slide" type="button" data-index="1">
+              <img src="assets/photos/fasade_02.jpg" loading="lazy" alt="POLOVKA BUILD — Будинок: фото 2">
+            </button>
+            <button class="room-card__slide" type="button" data-index="2">
+              <img src="assets/photos/fasade_03.jpg" loading="lazy" alt="POLOVKA BUILD — Будинок: фото 3">
+            </button>
+            <button class="room-card__slide" type="button" data-index="3">
+              <img src="assets/photos/fasade_04.jpg" loading="lazy" alt="POLOVKA BUILD — Будинок: фото 4">
+            </button>
+          </div>
+          <div class="room-card__scrim">
+            <div class="room-card__title-row">
+              <h3 class="room-card__title">Фасад будинку</h3>
+              <span class="room-card__count">4 фото</span>
+            </div>
+            <div class="room-card__dots"></div>
+          </div>
+          <button class="room-card__arrow room-card__arrow--prev" type="button" aria-label="Попереднє фото">
+            <svg viewBox="0 0 24 24" fill="none"><path d="m14.5 6-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="room-card__arrow room-card__arrow--next" type="button" aria-label="Наступне фото">
+            <svg viewBox="0 0 24 24" fill="none"><path d="m9.5 6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </article>
+
       </div>
 
       <h3 class="gallery-subhead gallery-subhead--video" data-anim="fade-up">
         <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h7A2.5 2.5 0 0 1 16 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 4 16.5v-9Z" stroke="currentColor" stroke-width="1.6"/><path d="m16 10 4.2-2.4c.5-.3 1.1.1 1.1.7v7.4c0 .6-.6 1-1.1.7L16 14" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
         Відео з об'єктів
       </h3>
+
+      <!-- 2 КАРТКИ З ВІДЕО -->
       <div class="video-grid video-grid--tours" data-anim="fade-up">
 
         <article class="room-card room-card--video">
